@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence      http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+  <persistence-unit name="hibernate-jpa-study">
+    <!-- JPA -->
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <!-- entities -->
+    <class>hibernate.study.jpa.business.ProgrammerBackEnd</class>
+    <class>hibernate.study.jpa.business.ProgrammerFrontEnd</class>
+   <!-- <class>hibernate.study.jpa.business.Employee</class> -->
+
+    <properties>
+      <!-- conection data -->
+      <!-- postgresql -->
+      <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/hibernate-jpa"/>
+      <property name="javax.persistence.jdbc.user" value="postgres"/>
+      <property name="javax.persistence.jdbc.password" value="root"/>
+      <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+
+      <!--  hibernate properties -->
+      <property name="hibernate.show_sql" value="true"/>
+      <property name="hibernate.format_sql" value="true"/>
+      <property name="hibernate.archive.autodetection" value="class, hbm"/>
+      <!--  update database, table creator when needed -->
+      <property name="hibernate.hbm2ddl.auto" value="update"/>
+    </properties>
+  </persistence-unit>
+</persistence>
